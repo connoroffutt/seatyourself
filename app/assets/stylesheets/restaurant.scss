@@ -1,3 +1,97 @@
 // Place all the styles related to the Restaurant controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box {
+  background-color: rgba(255, 100, 50, 0.4);
+  background-origin: content-box;
+  border: solid 2px grey;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  float: left;
+  margin-left: 40px;
+  cursor: auto;
+  font-size: 26px;
+  text-align: center;
+}
+
+.rest-banner {
+  padding-left: 3px;
+}
+
+.box:hover {
+  background-color: white;
+  text-decoration: underline;
+  border: solid 2px orange;
+
+}
+.box a {
+  height: 20%;
+  width: 100%;
+}
+
+ img {
+  height: 60%;
+  width: 100%;
+}
+
+.rest-banner {
+  background-color: rgba(255, 100, 50, 0.8);
+}
+
+
+.rest-page-image img {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+
+}
+
+p {
+  margin: auto;
+  border-top: solid grey 2px;
+  border-left: solid grey 2px;
+  border-right: solid grey 2px;
+  padding: 0;
+  width: 66%;
+}
+
+.rest-page-name {
+
+  background-origin: content-box;
+  background-color: rgba(255, 100, 50, 0.6);
+  border-top: solid 2px grey;
+  border-left: solid 2px grey;
+  border-right: solid 2px grey;
+  color: grey;
+  width: 66%;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2px;
+
+}
+
+.rest-page-description {
+  margin: auto;
+  border: solid grey 2px;
+  padding: 0;
+  width: 66%;
+}
+
+body {
+  background-color: rgb(255, 232, 198);
+  margin: auto;
+}
+
+.footer {
+  margin: 0;
+  height: 20px;
+  width: 100%;
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: grey;
+}
