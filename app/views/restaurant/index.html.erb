@@ -1,6 +1,7 @@
 
 <h1 class="rest-banner"> Restaurants </h1>
 <div class="restaurant-all">
+<%= link_to "Your Account", "/users/:id/edit" %>
 <% @restaurants.each do |r| %>
   <p class="box"><%= link_to r.name , "/restaurant/#{r.id}" %>
  <%= link_to image_tag(r.image), "/restaurant/#{r.id}" %>
