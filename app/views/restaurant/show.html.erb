@@ -1,5 +1,7 @@
 
 
+<h1 class="rest-page-name"> <%= @restaurant.name %> - <%= @restaurant.cuisine %> </h1>
+
 
 <% if current_user %>
   <%= link_to "Reservation", new_reservation_path %>
@@ -7,4 +9,6 @@
     <p>Please <%= link_to "log in", new_session_path %> to make a reservation. </p>
 <% end %>
 
-<% end %>
+<p class="rest-page-image"> <%= link_to image_tag(@restaurant.image) %> </p>
+
+<h2 class="rest-page-description"><%= @restaurant.location %></h2>
