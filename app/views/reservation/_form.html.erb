@@ -1,0 +1,23 @@
+<%= form_for(@reservation) do |f| %>
+
+  <!-- <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.date_field :datetime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :party_size %><br />
+    <%= f.number_field :party_size %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "Reserve" %>
+  </div>
+
+
+<% end %>
