@@ -1,1 +1,12 @@
-<h1>SeatYourself</h1> restaurant#index
+<!-- <h1>SeatYourself</h1> restaurant#index -->
+
+
+<h1> SeatYourself</h1>
+<h1>Restaurants</h1>
+
+<div class="All Restaurants">
+  <% @restaurant.each do |r| %>
+  <p><%= r.name %>,<%= r.location %></p>
+  <%= link_to image_tag (@restaurant.url), restaurant_path(@restaurant) %>
+</div>
+  <% end %>
