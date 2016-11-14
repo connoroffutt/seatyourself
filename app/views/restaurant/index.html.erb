@@ -1,7 +1,11 @@
+<%= link_to "Edit Your Account", edit_user_path(current_user) %>
+
+<%= link_to "View Your Account", users_path(current_user) %>
+
 <h1 class="rest-banner"> Restaurants </h1>
-<%= link_to "Your Account", "/users/:id" %>
+
 <div class="restaurant-all">
-<%= link_to "Your Account", "/users/:id/edit" %>
+
 <% @restaurants.each do |r| %>
   <p class="box"><%= link_to r.name , "/restaurant/#{r.id}" %>
  <%= link_to image_tag(r.image), "/restaurant/#{r.id}" %>

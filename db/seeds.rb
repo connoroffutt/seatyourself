@@ -11,4 +11,4 @@ Restaurant.create(name: "Frankies Gourmet Mac and Cheese", location: "500 Queen 
 Restaurant.create(name: "Jimmy-Johns Sandwiches", location: "1000 Dundas St. W., Toronto", image: "http://www.followmefoodie.com/wp-content/uploads/2011/07/Estrellas-Montreal-Smoked-Meat-8.jpg", cuisine: "Sandwiches")
 Restaurant.create(name: "Burger Priest", location: "50 King St. W., Toronto", image: "http://www.theburgerspriest.com/wp-content/uploads/2012/10/BP-web-11.jpg", cuisine: "Burgers")
 
-User.create(username: "Connor", password: "password")
+User.create(username: "Connor", email: "connor@gmail.com", password_digest: "password")
