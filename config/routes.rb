@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   root 'restaurant#index'
 
-  resources :users
-  resources :restaurant
-  resources :reservation
+  resources :users do
+    resources :reservation, only: [:show :create, :destroy]
+  end
+  resources :restaurant do
+    resources :reservation, only: [:show]
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
 

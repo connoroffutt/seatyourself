@@ -32,7 +32,7 @@ class ReservationController < ApplicationController
   end
 
   def load_restaurant
-    @restaurant = restaurant.find(params[:product_id])
+    @restaurant = restaurant.find(params[:restaurant_id])
   end
 
   def load_user
