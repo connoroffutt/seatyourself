@@ -5,9 +5,13 @@
     <%= f.text_field :name %>
   </div> -->
 
+    <% if @reservation.errors.any? %>
+      <div id=>
+
+
   <div class="field">
     <%= f.label :datetime %><br />
-    <%= f.date_field :datetime %>
+    <%= f.datetime_field :datetime %>
   </div>
 
   <div class="field">

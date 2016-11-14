@@ -3,18 +3,21 @@ class ReservationController < ApplicationController
   before_action :load_restaurant
   before_action :load_user
 
+  def new
+    @reservation = Reservation.new
+  end
   def show
     @reservation = Reservation.find(params[:id])
   end
 
-  def new
+  def create
     @reservation = @restaurant.reservation.build(reservation_params)
     @reservation.user = current_user
 
     if @reservation.save
       redirect_to reservation_path(@reservation), notice: "Reservation created sucessfully"
     else
-      render "restaurant/show"
+      render "reservation/show"
     end
   end
 
