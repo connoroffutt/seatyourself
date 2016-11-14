@@ -3,7 +3,7 @@
 <div class="restaurant-all">
 <% @restaurants.each do |r| %>
   <p class="box"><%= link_to r.name , "/restaurant/#{r.id}" %>
- <%= link_to image_tag(r.image) %>
+ <%= link_to image_tag(r.image), "/restaurant/#{r.id}" %>
 <%= r.cuisine %> </p>
 <% end %>
 </div>

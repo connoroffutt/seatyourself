@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Seatyourself</title>
+    <title>SeatYourself</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header class="banner">
-    <h1 class="banner-text"> SeatYourself </h1>
+    <a href="/restaurant" style="text-decoration: none">
+      <h1 class="banner-text"> SeatYourself </h1>
+    </a>
   </header>
   <body>
     <%= yield %>
