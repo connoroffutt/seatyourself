@@ -1,7 +1,14 @@
 <h1 class="rest-banner"> Restaurants </h1>
+
+<% if current_user %>
 <%= link_to "Your Account", users_path(current_user) %>
+<% else %>
+<%= "Please Log in" %>
+<% end %>
 <div class="restaurant-all">
+  <% if current_user %>
 <%= link_to "Manage Your Account", edit_user_path(current_user) %>
+<% end %>
 <% @restaurants.each do |r| %>
   <p class="box"><%= link_to r.name , "/restaurant/#{r.id}" %>
  <%= link_to image_tag(r.image), "/restaurant/#{r.id}" %>
