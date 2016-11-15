@@ -1,24 +1,24 @@
 class ReservationController < ApplicationController
-  before_action :ensure_logged_in, only: [:create, :destroy]
+  before_action :ensure_logged_in, :only => [:create, :destroy]
   before_action :load_restaurant
-  before_action :load_user
 
-  def new
-    @reservation = Reservation.new
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservations = @restaurant.reservations
   end
 
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @reservation = @restaurant.reservations.find(params[:id])
+    @reservations = @restaurant.reservations
   end
 
   def create
-      @reservation = @restaurant.reservations.build(reservation_params)
+      @reservation = @restaurant.reservations.build(reservations_params)
       @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to restaurant_index_path, notice: "Reservation created successfully"
+      redirect_to root_path, notice: "Reservation created successfully"
     else
-      render "reservation/new"
+      render 'new'
     end
   end
 
@@ -28,15 +28,13 @@ class ReservationController < ApplicationController
   end
 
   private
-  def reservation_params
-    params.require(:reservation).permit(:datetime, :user_id, :restaurant_id)
-  end
-
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
-  def load_user
-    @user = current_user
+  def reservations_params
+    params.require(:reservations).permit(:user_id, :restaurant_id, :datetime)
   end
+
+
 end

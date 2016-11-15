@@ -1,14 +1,10 @@
-<%= form_for restaurant_reservation_index_path do |f| %>
 
 
-
-
-
+<%= form_for([@restaurant, @reservations]) do |f| %>
   <div class="field">
     <%= f.label :datetime %><br />
     <%= f.datetime_field :datetime %>
   </div>
-
   <div class="action">
     <%= f.submit "Reserve" %>
   </div>
