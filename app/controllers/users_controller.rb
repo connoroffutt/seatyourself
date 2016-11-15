@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @restaurant = @user.restaurants.first
+    @reservation.where(user_id: current_user.id, restaurant_id: @restaurant.id)
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

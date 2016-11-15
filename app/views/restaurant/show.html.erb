@@ -4,7 +4,7 @@
 
 
 <% if current_user %>
-  <%= link_to "Reservation", new_reservation_path %>
+  <%= link_to "New Reservation", restaurant_reservation_index_path(@restaurant) %>
 <% else %>
     <p>Please <%= link_to "log in", new_session_path %> to make a reservation. </p>
 <% end %>

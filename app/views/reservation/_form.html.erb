@@ -1,4 +1,5 @@
-<%= form_for(@reservation) do |f| %>
+<%= form_for restaurant_reservation_index_path do |f| %>
+
 
 
 
@@ -6,11 +7,6 @@
   <div class="field">
     <%= f.label :datetime %><br />
     <%= f.datetime_field :datetime %>
-  </div>
-
-  <div class="field">
-    <%= f.label :party_size %><br />
-    <%= f.number_field :party_size %>
   </div>
 
   <div class="action">
