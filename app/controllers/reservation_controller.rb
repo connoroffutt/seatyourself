@@ -16,7 +16,7 @@ class ReservationController < ApplicationController
       @reservation = @restaurant.reservations.build(reservation_params)
       @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to reservation_path(@reservation), notice: "Reservation created successfully"
+      redirect_to restaurant_index_path, notice: "Reservation created successfully"
     else
       render "reservation/new"
     end
@@ -29,7 +29,7 @@ class ReservationController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:user_id, :restaurant_id)
+    params.require(:reservation).permit(:datetime, :user_id, :restaurant_id)
   end
 
   def load_restaurant
