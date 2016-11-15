@@ -14,7 +14,7 @@
  *= require_self
  */
 .banner {
-  background-image: url(https://iso.500px.com/wp-content/uploads/2015/12/food_cover-1500x1000.jpg);
+  background-image: url(https://www.colourbox.com/preview/3276632-wine-glasses-on-a-table-in-a-restaurant.jpg);
   height: 300px;
   width: 100%;
 }
@@ -26,10 +26,24 @@
   margin-top: 0px;
   bottom: 100%;
   z-index: -1;
-  background-color: rgba(255, 100, 50, 0.4);
+  background-color: rgba(0, 100, 250, 0.4);
   font-family: sans-serif;
+  font: arial;
 }
 
 a {
   font-style: normal;
+}
+
+.userinfo {
+  float: right;
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }

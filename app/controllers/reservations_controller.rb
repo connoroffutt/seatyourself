@@ -1,15 +1,22 @@
-class ReservationController < ApplicationController
-  before_action :ensure_logged_in, :only => [:create, :destroy]
-  before_action :load_restaurant
+class ReservationsController < ApplicationController
+  before_action :ensure_logged_in, :except => [:load_restaurant]
+  before_action :load_restaurant, :except => [:index, :show]
+
+
 
   def index
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:user_id])
     @reservations = @restaurant.reservations
   end
 
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservations = @restaurant.reservations
+  end
+
+  def new
+      @reservation = Reservation.new
+
   end
 
   def create
@@ -33,7 +40,7 @@ class ReservationController < ApplicationController
   end
 
   def reservations_params
-    params.require(:reservations).permit(:user_id, :restaurant_id, :datetime)
+    params.require(:reservation).permit(:user_id, :restaurant_id, :datetime)
   end
 
 

@@ -1,11 +1,6 @@
 <h1>Edit your Account</h1>
-<%= link_to "Edit", edit_user_path %>
-<%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %>
+<p class="edit-button"><%= link_to "Edit", edit_user_path %></p>
+<p class="edit-button"><%= link_to "Delete", user_path, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %> </p>
 <%= render "form" %>
-<p>
-  <%= link_to "Back", restaurant_index_url %>
-</p>
-
-<p>
-  <%= link_to "Your Reservations", @restaurant_reservation_path %>
-</p>
+<p class="edit-button"><%= link_to "Back", restaurants_url %></p>
+<p class="edit-button"><%= link_to "Your Reservations", user_reservations_path(@user) %></p>

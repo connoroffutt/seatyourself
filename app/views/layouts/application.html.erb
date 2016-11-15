@@ -8,14 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header class="banner">
-    <a href="/restaurant" style="text-decoration: none">
+    <a href="/restaurants" style="text-decoration: none">
       <h1 class="banner-text"> SeatYourself </h1>
     </a>
   </header>
   <body>
     <p class="userinfo">
      <% if current_user %>
-       Signed in as <%= current_user.username %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+       Signed in as: <%= current_user.username %> - <%= link_to "Log out", session_path("current"), :method => :delete %>
      <% else %>
        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
      <% end %>

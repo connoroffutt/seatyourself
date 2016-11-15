@@ -1,0 +1,27 @@
+<p class="manageyouraccount"><% if current_user %>
+<%= link_to "Your Account", users_path(current_user) %>
+<% else %>
+<%= "Sign-up to start reserving now!" %>
+<% end %></p>
+<p class="manageyouraccount"><% if current_user %>
+<%= link_to "Manage Your Account", edit_user_path(current_user) %>
+<% else %>
+<%= "Not logged in." %>
+<% end %></p>
+
+
+<p class="add"><%= link_to "Add A Restaurant", new_restaurant_path %></p>
+
+
+
+<h1 class="rest-banner"> Restaurants </h1>
+
+
+
+<div class="restaurant-all">
+<% @restaurants.each do |r| %>
+  <p class="box"><%= link_to r.name , "/restaurants/#{r.id}" %>
+ <%= link_to image_tag(r.image), "/restaurants/#{r.id}" %>
+<%= r.cuisine %> </p>
+<% end %>
+</div>

@@ -3,12 +3,12 @@
 </h1>
 
 
-<p class="link-to-rest"><%= link_to "All Restaurants in Your Area", restaurant_index_url %></p>
+<p class="link-to-rest"><%= link_to "All Restaurants in Your Area", restaurants_url %></p>
 
 
 <h2>Manage your reservations</h2>
 
-<p><%= link_to "Your Reservations", restaurant_reservation_path(@restaurant, @reservation.id) %></p>
+<p><%= link_to "Your Reservations", user_reservations_path(:id) %></p>
 
 <%= link_to "Edit", @edit_restaurant_reservation_path %>
 <%= link_to "Delete", @restaurant_reservation_path, method: :delete, data: {confirm: "Are you sure you want to delete your account?"} %>

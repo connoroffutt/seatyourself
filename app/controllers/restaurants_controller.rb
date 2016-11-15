@@ -1,4 +1,4 @@
-class RestaurantController < ApplicationController
+class RestaurantsController < ApplicationController
 before_action :ensure_logged_in, :except => [:index]
 
   def index
