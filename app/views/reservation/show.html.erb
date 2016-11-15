@@ -1,10 +1,9 @@
 
 <h1>Your Reservation<h1>
 
-  <h2>Reservation: <%= @reservation.id %> </h2>
-  <h2>User: <%= @user.id %> </h2>
-  <h2>restaurant: <%= @restaurant.name%></h2>
-  <p>datetime: <%= @reservation.datetime %></p>
+  <h2>Reservation: <%= @reservation.restaurant.name %> </h2>
+  <h2>Date and Time: <%= @reservation.datetime %><h2>
+
 
 
   <%= link_to "Delete", @reservation_path, method: :delete, data: {confirm: "Are you sure you want to delete this reservation?"} %>

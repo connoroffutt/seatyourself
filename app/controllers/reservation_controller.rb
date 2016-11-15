@@ -8,28 +8,18 @@ class ReservationController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
   end
 
-
-
   def create
-  #  @reservation = @restaurant.reservations.build(reservation_params)
-
-
-    @reservation = Reservation.new(
-    user_id: current_user.id,
-    restaurant_id: @restaurant.id,
-    datetime: datetime.now.strftime('%Y-%m-%d %I:%M:%S') 
-    )
-    # @reservation.save
-
+      @reservation = @restaurant.reservations.build(reservation_params)
+      @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to reservation_path(@reservation), notice: "Reservation created sucessfully"
+      redirect_to reservation_path(@reservation), notice: "Reservation created successfully"
     else
-      render "reservation/show"
+      render "reservation/new"
     end
-
   end
 
   def destroy
